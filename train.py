@@ -14,7 +14,7 @@ def train_model(model, train_loader, val_loader, batch_size = 128, lr = 0.001, e
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr = lr)
+    optimizer = optim.Adam(model.parameters(), lr = lr, weight_decay= 0.001)
 
     model = model.to(device)
 
@@ -89,7 +89,7 @@ def train_model(model, train_loader, val_loader, batch_size = 128, lr = 0.001, e
             val_error = running_error/len(val_loader.dataset)
             val_acc = corr/total
 
-        print(f'Epoch {epoch+1}: Train | Loss: {train_loss:.2f}, Error: {train_error:.2f}, Acc: {train_acc:.2%} || Val | Loss: {val_loss:.2f}, Error: {val_error:.2f}, Acc: {val_acc:.2%}')
+        print(f'Epoch {epoch+1}: Train | Loss: {train_loss:.3f}, Error: {train_error:.3f}, Acc: {train_acc:.3%} || Val | Loss: {val_loss:.3f}, Error: {val_error:.3f}, Acc: {val_acc:.3%}')
         end_time = time.time() - start_time
         print(f'Time after epoch {epoch+1}: {end_time:.2f}')
         file_path = get_model_name(model.name, batch_size, lr, epoch+1)

@@ -38,7 +38,7 @@ def get_data_loader(embed, batch_size = 128):
     for i in data.values.tolist():
         inputs, labels = i
 
-        max_length = 128
+        max_length = 150
         tokenized_sequence = []
 
         for i in range(max_length):
