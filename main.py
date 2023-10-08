@@ -67,7 +67,7 @@ if __name__ == '__main__':
     np.random.seed(1000)
     batch_size = 128
 
-    embed = GloVe(name = '840B', dim = 300, cache = 'C:\\Users\\chris\\Documents\\Online Courses & Personal Projects\\Portfolio\\RNN-LSTM\\.vector_cache')
+    embed = GloVe(name = '840B', dim = 300, cache = '')
     train_loader, val_loader, test_loader = get_data_loader(embed, batch_size=batch_size)
     
     model = DepressionDetector(embed)
