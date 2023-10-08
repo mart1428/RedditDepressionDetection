@@ -11,9 +11,9 @@ The motivation behind this project is to create a Deep Learning model that has t
 Model uses LSTM Method with Dropout and stacked layers. It then uses 3 fully connected layers as classifiers.
 
 Training Hyperparameters:
-* Learning Rate = 0.01
+* Learning Rate = 0.001
 * batch_size = 128
-* Weight_decay = 0.00001
+* Weight_decay = 0.001
 * Dropout Probability= 0.4
 
 Final model:
